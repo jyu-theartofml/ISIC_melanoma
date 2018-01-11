@@ -50,7 +50,6 @@ validation_array=image_array(validation_images, len(validation_images))
 
 ######################  Load pretrained model, then extract bottleneck ######################
 base_model = MobileNet(input_shape=(192,192,3), include_top=False,weights='imagenet')
-### scale the image numpy array
 
 def bottleneck(processed_array, save_file_name): ## save_file_name is in string format
     scaled_img=preprocess_input(processed_array)
@@ -59,7 +58,6 @@ def bottleneck(processed_array, save_file_name): ## save_file_name is in string 
     
     return bottleneck_features
    
-    
 bottleneck_features_train = bottleneck(train_array, 'bottleneck_features_train')
 bottleneck_features_validation = bottleneck(validation_array, 'bottleneck_features_val')
 
