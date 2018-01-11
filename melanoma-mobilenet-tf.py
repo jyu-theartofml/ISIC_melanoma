@@ -51,20 +51,23 @@ validation_array=image_array(validation_images, len(validation_images))
 ######################  Load pretrained model, then extract bottleneck ######################
 base_model = MobileNet(input_shape=(192,192,3), include_top=False,weights='imagenet')
 ### scale the image numpy array
-train_preprocessed=preprocess_input(train_array)
-validation_preprocessed=preprocess_input(validation_array)
 
-bottleneck_features_train = base_model.predict(train_preprocessed)
-np.save('bottleneck_features_train_192size_mobilenet.npy', bottleneck_features_train)
-
-bottleneck_features_validation = base_model.predict(validation_preprocessed)
-np.save('bottleneck_features_val_192size_mobilenet.npy', bottleneck_features_validation)
+def bottleneck(processed_array, save_file_name): ## save_file_name is in string format
+    scaled_img=preprocess_input(processed_array)
+    bottleneck_features=base_model.predict(scaled_img)
+    np.save(save_file_name+'.npy', bottleneck_features)
+    
+    return bottleneck_features
+   
+    
+bottleneck_features_train = bottleneck(train_array, 'bottleneck_features_train')
+bottleneck_features_validation = bottleneck(validation_array, 'bottleneck_features_val')
 
 ######################   Use the bottleneck features to train top model ########################
-train_data = np.load('bottleneck_features_train_192size_mobilenet.npy')
+train_data = np.load('bottleneck_features_train.npy')
 train_labels = np.array([0] * (1626) + [1] * (1122))
 
-validation_data = np.load('bottleneck_features_val_192size_mobilenet.npy')
+validation_data = np.load('bottleneck_features_val.npy')
 validation_labels = np.array([0] * (120) + [1] * (60))
 
 ### Define F1 score as a metric (this is the F1 function used in older version of keras) ###
