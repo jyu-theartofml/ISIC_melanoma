@@ -16,4 +16,4 @@ def image_ROI(file_path, mask_dir, save_path):
         img_masked=cv2.bitwise_and(img_color,img_color, mask = img_gray)
 
         #save full sized masked image as jpg in folder
-        cv2.imwrite(save_path+base_file+'_masked.jpg',  cv2.cvtColor(img_masked, cv2.COLOR_RGB2BGR))
+        cv2.imwrite(save_path+base_file+'_masked.jpg',  img_masked)
