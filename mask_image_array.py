@@ -4,8 +4,8 @@ import numpy as np
 import glob
 
 def image_ROI(file_path, mask_dir, save_path):
-
-    for i, image_file in enumerate(file_path):
+    image_files=glob.glob(file_path+'*.jpg')
+    for i, image_file in enumerate(image_files):
         base_file=image_file.split("\\")[1].split(".")[0]
         mask_file=mask_dir+base_file+'_segmentation.png'
 
