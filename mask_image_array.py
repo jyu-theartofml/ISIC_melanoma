@@ -13,7 +13,11 @@ def image_ROI(file_path, mask_dir, save_path):
 
         #get mask
         img_gray=cv2.imread(mask_file,0) #use 0 to import as gray
+        
+        #check size
+        if img_color.shape!= img_gray.shape:
+            img_gray=cv2.resize(img_gray, (img_color.shape[1],img_color.shape[0]))
         img_masked=cv2.bitwise_and(img_color,img_color, mask = img_gray)
-
+        
         #save full sized masked image as jpg in folder
         cv2.imwrite(save_path+base_file+'_masked.jpg', cv2.cvtColor(img_masked, cv2.COLOR_BGR2RGB))
