@@ -1,3 +1,6 @@
+### To run this .py file for segmentation, create a folder called 'masks', then type 'python3 segmentation.py file_path_name'
+### segmentation masks would be generated from jpg files in file_path_name and saved as fullsize in the folder 'masks'
+### file_path_name should be string characters
 import numpy as np
 import cv2
 import pandas as pd
@@ -17,8 +20,6 @@ from keras.callbacks import ModelCheckpoint
 from keras import backend as K
 
 K.set_image_dim_ordering('tf')
-
-###image_file is string of image path###########
 
 
 ROWS=200
@@ -119,6 +120,7 @@ def segnet():
 
 model=segnet()
 model.compile(optimizer=SGD(lr=5e-4, momentum=0.9), loss=dice_loss)
+########## after model compilation, load pre-trained optimized weights ######################
 model.load_weights('segnet_training_weights8_sgd.h5')
 predict_mask = model.predict(resized_array, verbose=1)
 
