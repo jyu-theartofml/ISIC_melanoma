@@ -1,4 +1,4 @@
-
+### UPDATE: use Densenet model, mobilenet is not robust on test dataset.
 import pandas as pd
 import numpy as np
 import os
