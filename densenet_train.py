@@ -150,7 +150,7 @@ model.compile(optimizer=Adam(lr=0.00001),loss='categorical_crossentropy', metric
 
 ### Evaluate performance on validation set
 prediction=model.predict(validation_preprocessed, verbose=1)
-validation_cat2=y_val[:,1]
+validation_cat2=validation_target[:,1]
 prediction_cat2=prediction[:,1]
 
 from sklearn.metrics import roc_auc_score,f1_score, roc_curve, auc, accuracy_score, confusion_matrix
