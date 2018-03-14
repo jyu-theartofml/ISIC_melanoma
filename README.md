@@ -4,7 +4,7 @@ This is the repo for blog post <a href='http://yinniyu.github.io/posts/melanoma'
 
 The general workflow is as follows: segmentation of original image --> mask image --> run model on masked image to predict.
 
-<i>Note: This is still a work-in-progress, more information/graphics will be added later. </i>
+<i>Note: This repo is still a work-in-progress, more information/graphics will be added later. </i>
 
 <p align='center'><figure>
    <img src="graphics/segnet_schematic.png" alt="segnet" >
