@@ -7,7 +7,7 @@ The general workflow is as follows: segmentation of original image(segmentation_
 
 <i>Note: This repo is still a work-in-progress, more information/graphics will be added later. </i>
 
-<figure>
+<figure text-align=center>
    <img src="graphics/segnet_schematic.png" alt="segnet" >
    <figcaption>Fig.1. Schematic of the segnet architecture used in this repo.</figcaption>
 </figure> 
