@@ -25,8 +25,5 @@ First, training images of melanoma and seborrheic keratoses are augmented to gen
  
  The model is evaluated using F1 score and AUC metrics based on the melanoma vs. non-melanomic prediction, as show in the ROC curve and confusion matrix below in Fig.3. The test set performance evaluation turned out to be very similar to the validation set.
  
-  <figure>
-   <img src="graphics/AUC_validation_set.png" alt="AUC" >
-   <img src="graphics/confusion_matrix_validation.png" alt="confusion matrix" >
-   <figcaption>Fig.3. Evaluation of DenseNet model performance.</figcaption>
-</figure>
+<p align='center'><img src="graphics/AUC_validation_set.png" alt="AUC"><img src="graphics/confusion_matrix_validation.png" alt="confusion matrix" ></p>
+<p align='center'>Fig.3. Evaluation of DenseNet model performance.</p>
