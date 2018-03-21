@@ -9,14 +9,14 @@ The general workflow is as follows: segmentation of original image(segmentation_
 
 <figure>
    <img src="graphics/segnet_schematic.png" alt="segnet" >
-   <p align='center'><figcaption>Fig.1. Schematic of the segnet architecture used in this repo.</figcaption>
-</figure> </p>
+   <figcaption>Fig.1. Schematic of the segnet architecture used in this repo.</figcaption>
+</figure> 
    
 
-<p align='center'><figure>
+<figure>
    <img src="graphics/densenet_flow.png" alt="densenet" >
    <figcaption>Fig.2. Schematic of the densenet121 architecture based on Keras' application model.</figcaption>
-</figure> </p>
+</figure>
    
    
   
