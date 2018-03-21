@@ -7,16 +7,22 @@ The general workflow is as follows: segmentation of original image(segmentation_
 
 <i>Note: This repo is still a work-in-progress, more information/graphics will be added later. </i>
 
+First, training images of melanoma and seborrheic keratoses are augmented to generate more copies because those categories are under represented. Segmentaion is applied to 'clean up' the image by minimizing the noise and artifacts of the original image. A SegNet model (Fig.1) is trained for this step.
+
 <figure text-align=center>
    <img src="graphics/segnet_schematic.png" alt="segnet" >
    <figcaption>Fig.1. Schematic of the segnet architecture used in this repo.</figcaption>
 </figure> 
-   
+ 
+ After the segmentation mask is applied to the image, DenseNet is trained as a 3-class classifier (benign, seborrheic keratoses, and melanoma). The dense connections between the layers within the DenseNet block unit offers the advantage of better information flow, and learning from finer localized features in addition to broader contextual information. 
 
 <figure>
    <img src="graphics/densenet_flow.png" alt="densenet" >
    <figcaption>Fig.2. Schematic of the densenet121 architecture based on Keras' application model.</figcaption>
 </figure>
    
-   
+ ## Model Evalution
+ 
+ The model is evaluated using F1 score and AUC metrics based on the melanoma vs. non-melanomic prediction, as show in the ROC curve and confusion matrix below in Fig.3.
+ 
   
