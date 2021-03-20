@@ -1,6 +1,6 @@
 Flask==1.0.2
 Flask-Cors==3.0.4
-Jinja2==2.10
+Jinja2==2.11.3
 lime==0.1.1.36
 matplotlib==3.0.3
 numpy==1.15.4
