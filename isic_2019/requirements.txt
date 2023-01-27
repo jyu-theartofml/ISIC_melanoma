@@ -4,7 +4,7 @@ Jinja2==2.11.3
 lime==0.1.1.36
 matplotlib==3.0.3
 numpy==1.15.4
-onnx==1.2.1
+onnx==1.13.0
 pandas==0.22.0
 Pillow==8.3.2
 scikit-image==0.13.1
