@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 MAINTAINER Jenny Yu "jypucca@hotmail.com"
 
@@ -12,7 +12,8 @@ WORKDIR /app
 RUN mkdir img_storage
 
 RUN pip3 install -r requirements.txt
-RUN pip3 install torch==1.3.1+cpu torchvision==0.4.2+cpu -f https://download.pytorch.org/whl/torch_stable.html
+RUN pip3 install torch==1.8.1+cpu torchvision==0.9.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
+
 
 EXPOSE 5000
 
